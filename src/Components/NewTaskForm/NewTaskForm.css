@@ -1,0 +1,32 @@
+#NewTaskForm {
+    display: none;
+}
+
+#NewTaskFormBG {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+#NewTaskFormContent {
+    background-color: rgba(40, 39, 39, 0.858);
+    margin: 100px auto; 
+    height: 600px;
+    width: 600px;
+}
+
+#ExitCross {
+    max-width: 40px;
+    margin-left: auto;
+}
+
+#ExitCross:hover {
+    cursor: pointer;
+    color: rgb(202, 168, 206);
+    max-width: 40px;
+    margin-left: auto;
+}
