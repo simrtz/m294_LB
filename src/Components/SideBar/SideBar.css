@@ -1,6 +1,26 @@
 #SideBar {
     background-color: rgba(40, 39, 39, 0.858);
     width: 25%;
-    height: 82vh;
+    height: calc(100vh - 150px);
     margin-left: auto;
+    padding: 30px;
+}
+
+#CreateTask {
+    color: rgb(150, 55, 160);
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#CreateTask:hover {
+    cursor: pointer;
+    color: rgb(202, 168, 206);
+}
+
+#BreakLine {
+    border: solid rgb(150, 55, 160);
+    border-width: 2px;
+    background-color: rgb(150, 55, 160);
+    margin-top: 20px;
+    border-radius: 5px;
 }

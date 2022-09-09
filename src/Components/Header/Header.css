@@ -1,4 +1,7 @@
 #Header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     display: flex;
     background-color: rgb(37, 36, 36);
 }
@@ -11,13 +14,14 @@
 
 #Logo {
     margin: 25px;
+    margin-left: 70px;
     max-width: 100px;
     height: 100px;
 
 }
 
-.AccountButton{
-    font: 20px sans-serif;
+.accountButton{
+    font: 25px sans-serif;
     font-weight: bold;
     color: rgb(150, 55, 160);
     border: solid rgb(150, 55, 160);
@@ -26,7 +30,7 @@
     margin: auto 10px auto auto;
 }
 
-.AccountButton:hover {
+.accountButton:hover {
     cursor: pointer;
     color: rgb(202, 168, 206);
     border-color: rgb(202, 168, 206);
@@ -35,5 +39,5 @@
 
 #SignUpButton{
     margin-left: 20px;
-    margin-right: 150px;
+    margin-right: 200px;
 }
