@@ -1,0 +1,7 @@
+#SignUpForm {
+    display: none;
+}
+
+#SignUpForm .popUpFormContent {
+    height: 630px;
+}

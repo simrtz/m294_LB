@@ -1,0 +1,12 @@
+#LoginForm {
+    display: none;
+}
+
+.textField {
+    height: 30px;
+    width: 500px;
+}
+
+#LoginForm .popUpFormContent {
+    height: 430px;
+}

@@ -2,7 +2,7 @@
     display: none;
 }
 
-#NewTaskFormBG {
+.popUpFormBG {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -12,21 +12,86 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-#NewTaskFormContent {
+.popUpFormContent {
     background-color: rgba(40, 39, 39, 0.858);
     margin: 100px auto; 
     height: 600px;
     width: 600px;
 }
 
-#ExitCross {
+.popUpFormContent h1{
+    margin: 20px;
+}
+
+.formHeader {
+    display: flex;
+}
+
+.exitCross {
+    max-width: 40px;
+    max-height: 40px;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.exitCross:hover {
+    cursor: pointer;
+    color: rgb(202, 168, 206);
+    filter: brightness(150%); 
     max-width: 40px;
     margin-left: auto;
 }
 
-#ExitCross:hover {
+.headerBreakLine {
+    margin-left: 15px;
+    margin-right: 15px;
+    border: solid rgb(150, 55, 160);
+    border-width: 2px;
+    background-color: rgb(150, 55, 160);
+    border-radius: 5px;
+}
+
+.formField {
+    margin: 30px;
+}
+
+.formLabel {
+    display: block;
+    font: 25px sans-serif;
+    font-weight: bold;
+}
+
+.textField {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+    background-color: rgb(45, 45, 45);
+    border: solid 1px rgba(66, 66, 66, 0.863);
+    height: 30px;
+    width: 500px;
+}
+
+#DescriptionForm {
+    resize: none;
+    height: 200px;
+    width: 500px;
+}
+
+.submit {
+    background-color:rgb(45, 45, 45);
+    font: 25px sans-serif;
+    font-weight: bold;
+    color: rgb(150, 55, 160);
+    border: solid rgb(150, 55, 160);
+    border-radius: 10px;
+    padding: 10px;
+    margin: auto auto 10px 30px;
+}
+
+.submit:hover {
     cursor: pointer;
     color: rgb(202, 168, 206);
-    max-width: 40px;
-    margin-left: auto;
+    border-color: rgb(202, 168, 206);
+    background-color: rgba(149, 55, 160, 0.596);
 }
