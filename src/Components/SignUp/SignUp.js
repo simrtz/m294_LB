@@ -1,5 +1,11 @@
 function SignUp() {
 
+    document.addEventListener('keydown', function (event) {
+        if(event.key === 'Escape') {
+            document.querySelector("#SignUpForm").style.display = "none";
+        }
+    });
+    
     function close() {
 
         document.querySelector("#SignUpForm").style.display = "none";

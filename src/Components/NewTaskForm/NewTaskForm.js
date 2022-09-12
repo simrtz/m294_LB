@@ -1,5 +1,11 @@
 function NewTaskForm() {
 
+    document.addEventListener('keydown', function (event) {
+        if(event.key === 'Escape') {
+            document.querySelector("#NewTaskForm").style.display = "none";
+        }
+    });
+
     function close() {
 
         document.querySelector("#NewTaskForm").style.display = "none";

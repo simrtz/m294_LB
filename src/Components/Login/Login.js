@@ -1,5 +1,11 @@
 function Login() {
 
+    document.addEventListener('keydown', function (event) {
+        if(event.key === 'Escape') {
+            document.querySelector("#LoginForm").style.display = "none";
+        }
+    });
+
     function close() {
 
         document.querySelector("#LoginForm").style.display = "none";
