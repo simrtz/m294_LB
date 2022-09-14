@@ -19,6 +19,9 @@ import SignUpForm from './Components/SignUpForm/SignUpForm';
 import './Components/Tasks/Tasks.css';
 import Task from './Components/Tasks/Tasks';
 
+import './Components/Tasks/EditPopUp/EditPopUp.css';
+import EditPopUp from './Components/Tasks/EditPopUp/EditPopUp';
+
 function App() {
 
   return (
@@ -30,6 +33,7 @@ function App() {
         <Task />
         <SideBar />
         <NewTaskForm />
+        <EditPopUp />
       </div>
     </div>
   );

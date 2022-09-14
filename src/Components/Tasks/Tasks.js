@@ -31,6 +31,18 @@ function Tasks() {
             })
         }
         ) 
+
+        document.querySelectorAll(".editButton").forEach((task) => {
+            task.addEventListener("click", function() {
+                
+                document.querySelector("#EditPopUp").style.display = "flex";
+                
+                fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
+                method: 'PUT',
+                }).then(() => window.location.reload());
+            })
+        }
+        ) 
     };
 
     return(
