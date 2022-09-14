@@ -1,3 +1,5 @@
+import Tasks from "../Tasks/Tasks";
+
 function NewTaskForm() {
 
     document.addEventListener('keydown', function (event) {
@@ -13,11 +15,24 @@ function NewTaskForm() {
 
     function createNewTask() {
 
-        let title = document.querySelector("#TitleForm").value;
-        let description = document.querySelector("#DescriptionForm").value;
+        fetch("http://localhost:3000/tasks")
+        .then((response) => response.json())
+        .then((data) => {
+            let task =  {
+                id: data.length == 0 ? 1 : data[data.length - 1].id + 1,
+                title: document.querySelector("#TitleForm").value, 
+                description: document.querySelector("#DescriptionForm").value
+            }
 
-        if(title !== null & )
-        const task
+            fetch("http://localhost:3000/tasks", {
+            method: 'POST',
+            body: JSON.stringify(task),
+            headers: {
+                'Content-Type':'application/json',
+            }
+            }).then(() => window.location.reload());
+
+        })
     }
 
     return(
@@ -35,12 +50,12 @@ function NewTaskForm() {
                             <input id="TitleForm" class="textField" placeholder="Title..." required></input>
                         </div>
                         
-                        <div class="formField">
+                        <div class="formField">                             
                             <label class="formLabel"> Description: </label> 
-                            <textarea id="DescriptionForm" class="textField" placeholder="Description..."></textarea>
+                            <textarea id="DescriptionForm" class="textField" placeholder="Description..." required></textarea>
                         </div>
 
-                        <button type="submit" class="submit">Create Task</button>
+                        <button class="submit" onClick={() => createNewTask()}>Create Task</button>
                     </div>
                 </form>
             </div>

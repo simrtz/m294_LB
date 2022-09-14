@@ -38,6 +38,12 @@
 }
 
 #SignUpButton{
+    background-color: rgb(149, 55, 160);
+    color: rgb(37, 36, 36);
     margin-left: 20px;
     margin-right: 200px;
+}
+
+#SignUpButton:hover{
+    color: rgb(202, 168, 206);
 }

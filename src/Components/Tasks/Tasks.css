@@ -18,8 +18,9 @@
     height: 30px;
     margin-top: 25px;
     margin-left: 20px;
+    right: 0;
 }
-
+    
 .task img:hover {
     cursor: pointer;
     filter: brightness(150%); 
@@ -33,7 +34,6 @@
     font-weight: bold;
     font-size: 30px;
     margin: 20px;
-    margin-right: 230px;
 }
 
 .description {
