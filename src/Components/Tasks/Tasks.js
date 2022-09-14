@@ -37,8 +37,8 @@ function Tasks() {
         document.querySelectorAll(".editButton").forEach((task) => {
             task.addEventListener("click", function(ev) {
                 
-                document.querySelector("#EditPopUp").style.display = "flex";
-                let form = document.querySelector("#EditPopUp");
+                document.querySelector("#EditPopUp").style.display = "flex";    
+                let form = document.querySelector("#EditPopUp"); 
                 
                 form.addEventListener("submit", function(ev) {
                     ev.preventDefault();
