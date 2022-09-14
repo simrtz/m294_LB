@@ -1,4 +1,4 @@
-function Login() {
+function LoginForm() {
 
     document.addEventListener('keydown', function (event) {
         if(event.key === 'Escape') {
@@ -23,12 +23,12 @@ function Login() {
                     <div class="form">
                         <div class="formField">
                             <label class="formLabel"> E-Mail: </label>
-                            <input type={"email"} id="EMailForm" class="textField" placeholder="E-Mail..." required></input>
+                            <input type={"email"} class="textField" placeholder="E-Mail..." required></input>
                         </div>
                         
                         <div class="formField">
                             <label class="formLabel"> Password: </label> 
-                            <input type={"password"} id="PasswordForm" class="textField" placeholder="Password..." required></input>
+                            <input type={"password"} class="textField" placeholder="Password..." required></input>
                         </div>
 
                         <button type="submit" class="submit">Login</button>
@@ -39,4 +39,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default LoginForm;

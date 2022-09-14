@@ -11,6 +11,15 @@ function NewTaskForm() {
         document.querySelector("#NewTaskForm").style.display = "none";
     }
 
+    function createNewTask() {
+
+        let title = document.querySelector("#TitleForm").value;
+        let description = document.querySelector("#DescriptionForm").value;
+
+        if(title !== null & )
+        const task
+    }
+
     return(
         <div id="NewTaskForm">
             <div class="popUpFormBG">

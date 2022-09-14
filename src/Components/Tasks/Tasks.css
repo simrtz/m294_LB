@@ -1,0 +1,41 @@
+#Tasks {
+    display: grid;
+    grid-template-columns: 550px 550px;
+}
+
+.task {
+    width: 450px;
+    height: 450px;
+    background-color: rgba(40, 39, 39, 0.858);
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.task img {
+    width: 30px;
+    height: 30px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.task img:hover {
+    cursor: pointer;
+    filter: brightness(150%); 
+}
+
+.headerArea {
+    display: flex;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 30px;
+    margin: 20px;
+    margin-right: 230px;
+}
+
+.description {
+    margin: 20px;
+}

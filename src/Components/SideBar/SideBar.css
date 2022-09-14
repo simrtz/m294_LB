@@ -1,8 +1,9 @@
 #SideBar {
+    position: fixed;
+    right: 0;
     background-color: rgba(40, 39, 39, 0.858);
     width: 25%;
     height: calc(100vh - 150px);
-    margin-left: auto;
     padding: 30px;
 }
 

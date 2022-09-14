@@ -13,7 +13,7 @@
 }
 
 .popUpFormContent {
-    background-color: rgba(40, 39, 39, 0.858);
+    background-color: rgb(40, 39, 39);
     margin: 100px auto; 
     height: 600px;
     width: 600px;
@@ -37,7 +37,6 @@
 
 .exitCross:hover {
     cursor: pointer;
-    color: rgb(202, 168, 206);
     filter: brightness(150%); 
     max-width: 40px;
     margin-left: auto;
