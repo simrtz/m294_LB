@@ -12,7 +12,7 @@ function EditPopUp() {
     }
 
     return (
-        <div id="EditPopUP">
+        <div id="EditPopUp">
                 <div class="popUpFormBG">
                     <form class="popUpFormContent">
                         <div class="formHeader">
@@ -31,7 +31,7 @@ function EditPopUp() {
                                 <textarea id="EditDescription" class="textField" placeholder="Description..." required></textarea>
                             </div>
 
-                            <button class="submit">Save</button>
+                            <button type="submit" class="submit">Save</button>
                         </div>
                     </form>
                 </div>

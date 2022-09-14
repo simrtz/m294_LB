@@ -1,3 +1,5 @@
+import { waitFor } from "@testing-library/react";
+
 function Tasks() {
 
     function taskTemplate(tasks) {
@@ -13,10 +15,10 @@ function Tasks() {
         </div>`
     }
 
-    window.onload = async function getData() {
-        const response = await fetch ("http://localhost:3000/tasks", {
-        method: 'GET'
-        });
+        window.onload = async function getData() {
+            const response = await fetch ("http://localhost:3000/tasks", {
+            method: 'GET'
+        }); 
 
         let tasks = await response.json();
 
@@ -27,19 +29,34 @@ function Tasks() {
                 fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
                 method: 'DELETE'
             }).then(() => window.location.reload());
-            
+                alert("Task was deleted");
             })
         }
         ) 
 
         document.querySelectorAll(".editButton").forEach((task) => {
-            task.addEventListener("click", function() {
+            task.addEventListener("click", function(ev) {
                 
                 document.querySelector("#EditPopUp").style.display = "flex";
+                let form = document.querySelector("#EditPopUp");
                 
-                fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
-                method: 'PUT',
-                }).then(() => window.location.reload());
+                form.addEventListener("submit", function(ev) {
+                    ev.preventDefault();
+
+                    let editTask = {
+                        id : task.getAttribute("taskID"),
+                        title : document.querySelector("#EditTitle").value, 
+                        description: document.querySelector("#EditDescription").value
+                    } 
+            
+                    fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
+                    method: 'PUT',
+                    body: JSON.stringify(editTask),
+                    headers: {
+                        "Content-Type":"application/json"
+                    }
+                    }).then(() => window.location.reload());;
+                })
             })
         }
         ) 

@@ -1,3 +1,9 @@
-#EditPopUP {
+#EditPopUp {
     display: none;
+}
+
+#EditDescription{
+    resize: none;
+    height: 200px;
+    width: 500px;    
 }

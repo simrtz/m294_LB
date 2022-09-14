@@ -1,3 +1,4 @@
+import { wait } from "@testing-library/user-event/dist/utils";
 import Tasks from "../Tasks/Tasks";
 
 function NewTaskForm() {
@@ -18,11 +19,12 @@ function NewTaskForm() {
         fetch("http://localhost:3000/tasks")
         .then((response) => response.json())
         .then((data) => {
+
             let task =  {
                 id: data.length == 0 ? 1 : data[data.length - 1].id + 1,
                 title: document.querySelector("#TitleForm").value, 
                 description: document.querySelector("#DescriptionForm").value
-            }
+            };
 
             fetch("http://localhost:3000/tasks", {
             method: 'POST',
@@ -30,8 +32,8 @@ function NewTaskForm() {
             headers: {
                 'Content-Type':'application/json',
             }
-            }).then(() => window.location.reload());
-
+            }).then(window.location.href("/"));
+    ;
         })
     }
 
