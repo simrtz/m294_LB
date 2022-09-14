@@ -1,3 +1,17 @@
 {
-  "tasks": []
+  "users": [
+    {
+      "email": "test@test.test",
+      "password": "$2a$10$qS57I3/n2SqBZXhTOnsxs.UemGRHYptmgSLN7fUciaINRs7GZf.0W",
+      "username": "test",
+      "id": 1
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Test 1",
+      "description": "test test test\n"
+    }
+  ]
 }

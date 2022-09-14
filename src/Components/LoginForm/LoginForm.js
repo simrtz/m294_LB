@@ -11,6 +11,23 @@ function LoginForm() {
         document.querySelector("#LoginForm").style.display = "none";
     }
 
+    function login() {
+
+            fetch("http://localhost:3000/login", {
+                method: 'POST',
+                body: JSON.stringify(
+                    {
+                        email: document.querySelector("#EMailForm").value,
+                        password: document.querySelector("#PasswordForm").value
+                        
+                    }),
+                headers: {
+                    'Content-Type':'application/json'
+                }
+            })
+        }
+
+
     return(
         <div id="LoginForm">
             <div class="popUpFormBG">
@@ -31,7 +48,7 @@ function LoginForm() {
                             <input type={"password"} class="textField" placeholder="Password..." required></input>
                         </div>
 
-                        <button type="submit" class="submit">Login</button>
+                        <button type="submit" class="submit" onClick={() => login()}>Login</button>
                     </div>
                 </form>
             </div>

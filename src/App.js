@@ -21,21 +21,23 @@ import Task from './Components/Tasks/Tasks';
 
 import './Components/Tasks/EditPopUp/EditPopUp.css';
 import EditPopUp from './Components/Tasks/EditPopUp/EditPopUp';
+import { UserContext } from './UserContext';
+import { useMemo } from 'react';
 
 function App() {
-
+  
   return (
-    <div className="App">
-      <Header />
-      <LoginForm />
-      <SignUpForm />
-      <div id="WorkSpace">
-        <Task />
-        <SideBar />
-        <NewTaskForm />
-        <EditPopUp />
+      <div className="App">
+        <Header />
+        <LoginForm />
+        <SignUpForm />
+        <div id="WorkSpace">
+          <Task />
+          <SideBar />
+          <NewTaskForm />
+          <EditPopUp />
+        </div>
       </div>
-    </div>
   );
 }
 
