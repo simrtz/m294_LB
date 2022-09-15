@@ -12,8 +12,8 @@ function LoginForm() {
     }
 
     function login(e) {
-
-        
+        // e.preventDefault();
+        console.log('e')
         fetch("http://localhost:3000/login", {
             method: 'POST',
             body: JSON.stringify(
@@ -24,8 +24,13 @@ function LoginForm() {
             headers: {
                 'Content-Type':'application/json'
             }
-        }).then(window.location.href = "/");
-    }
+        }).then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            sessionStorage.setItem("token", data.accessToken);
+            window.location.href = "/"
+        })
+        }
 
 
     return(
@@ -48,7 +53,7 @@ function LoginForm() {
                             <input id="LoginPassword" type={"password"} class="textField" placeholder="Password..." required></input>
                         </div>
 
-                        <button type="submit" class="submit" onClick={(e) => login(e)}>Login</button>
+                        <button id="LoginSubmit" type="button" class="submit" onClick={(e) => login(e)}>Login</button>
                     </div>
                 </form>
             </div>

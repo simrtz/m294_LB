@@ -32,7 +32,7 @@ function SignUpForm() {
                 }
             }).then((response) => response.JSON())
             .then((data) => {
-                localStorage.setItem("token", data.accessToken);
+                sessionStorage.setItem("token", data.accessToken);
             }
             ).then(window.location.href = "/");
         }
@@ -41,7 +41,7 @@ function SignUpForm() {
     return(
         <div id="SignUpForm">
             <div class="popUpFormBG">
-                <form class="popUpFormContent">
+                <form class="popUpFormContent" onSubmit={(e) => signUp(e)}>
                     <div class="formHeader">
                         <h1>Sign Up:</h1>      
                         <img class="exitCross" src="cross.png" onClick={() => close()} alt="exitCross"></img>
@@ -69,7 +69,7 @@ function SignUpForm() {
                             <input id="ConfirmPasswordForm" type={"password"} class="textField" placeholder="Confirm Password..." required></input>
                         </div>
 
-                        <button type="submit" class="submit" onClick={(e) => signUp(e)}>Sign Up</button>
+                        <button type="submit" class="submit">Sign Up</button>
                     </div>
                 </form>
             </div>

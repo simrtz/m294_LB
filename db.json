@@ -23,6 +23,11 @@
       "password": "$2a$10$g41.CzP.sovPYxTV9/47s.PUh3tEwSUtAWGSaWErF3NV7m3Wy//GC",
       "username": "te2t",
       "id": 4
+    },
+    {
+      "email": "test@testd.ch",
+      "password": "$2a$10$ZZRu5xI4iyqAlbci9nd8O.eQMfRQuofC6Uc7onf1.9ckw5woElWtS",
+      "id": 5
     }
   ],
   "tasks": [
@@ -30,7 +35,25 @@
       "id": 1,
       "title": "Test 1",
       "description": "ssds",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "Test 2",
+      "description": "uhg",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "title": "Test 1",
+      "description": "nfdsjfnp",
       "userId": null
+    },
+    {
+      "id": 4,
+      "title": "Test 1",
+      "description": "dsasd",
+      "userId": 1
     }
   ]
 }

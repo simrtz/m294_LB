@@ -26,22 +26,18 @@ function NewTaskForm() {
                 userId: localStorage.getItem("token")
             };
 
-            if(task.title !== "" & task.description !== "") {
-                fetch("http://localhost:3000/tasks", {
-                method: 'POST',
-                body: JSON.stringify(task),
-                headers: {
-                    'Content-Type':'application/json',
-                }
-                }).then(window.location.href = "/");
-            } else {
-                alert("Fields must not be empty");
-            };
+            fetch("http://localhost:3000/tasks", {
+            method: 'POST',
+            body: JSON.stringify(task),
+            headers: {
+                'Content-Type':'application/json',
+            }
+            }).then(window.location.href = "/");
         }
     )};
 
     return(
-        <div id="NewTaskForm">
+        <div id="NewTaskForm" onSubmit={(e) => createNewTask(e)}>
             <div class="popUpFormBG">
                 <form class="popUpFormContent">
                     <div class="formHeader">
@@ -60,7 +56,7 @@ function NewTaskForm() {
                             <textarea id="DescriptionForm" class="textField" placeholder="Description..." required></textarea>
                         </div>
 
-                        <button type="submit" class="submit" onClick={(e) => createNewTask(e)}>Create Task</button>
+                        <button type="submit" class="submit">Create Task</button>
                     </div>
                 </form>
             </div>

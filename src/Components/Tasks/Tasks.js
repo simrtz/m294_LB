@@ -16,13 +16,18 @@ function Tasks() {
 
         window.onload = async function getData() {
             const response = await fetch ("http://localhost:3000/tasks", {
-            method: 'GET'
+            method: 'GET',
+            header: {
+                "Authorization": `bearer ${sessionStorage.getItem("token")}`
+            }
         }); 
 
-        let tasks = await response.json();
+        const tasks = await response.json();
 
-        document.querySelector("#Tasks").innerHTML = `${tasks.map(taskTemplate).join('')}`;
-    
+        window.onload = function() {
+            document.querySelector("#Tasks").innerHTML = `${tasks.map(taskTemplate).join('')}`;
+        }
+
         document.querySelectorAll(".deleteButton").forEach((task) => {
             task.addEventListener("click", function() {
                 fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {

@@ -2,8 +2,6 @@
 function Header() {
 
     function login() {
-
-        console.log(localStorage.getItem("token"));
         
         document.querySelector("#LoginForm").style.display = "flex";
     }
@@ -11,10 +9,6 @@ function Header() {
     function signUp() {
         
         document.querySelector("#SignUpForm").style.display = "flex";
-    }
-
-    if(localStorage.getItem("token") !== null) {
-        document.querySelector("Header").innerHTML = `<div id="LogoutButton" class="accountButton" onClick={() => login()}>Logout </div>`
     }
 
     return (
