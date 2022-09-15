@@ -1,5 +1,3 @@
-import { wait } from "@testing-library/user-event/dist/utils";
-import Tasks from "../Tasks/Tasks";
 
 function NewTaskForm() {
 
@@ -22,21 +20,25 @@ function NewTaskForm() {
         .then((data) => {
 
             let task =  {
-                id: data.length == 0 ? 1 : data[data.length - 1].id + 1,
+                id: data.length === 0 ? 1 : data[data.length - 1].id + 1,
                 title: document.querySelector("#TitleForm").value, 
-                description: document.querySelector("#DescriptionForm").value
+                description: document.querySelector("#DescriptionForm").value,
+                userId: localStorage.getItem("token")
             };
 
-            fetch("http://localhost:3000/tasks", {
-            method: 'POST',
-            body: JSON.stringify(task),
-            headers: {
-                'Content-Type':'application/json',
-            }
-            }).then(window.location.href = "/");
-    ;
-        })
-    }
+            if(task.title !== "" & task.description !== "") {
+                fetch("http://localhost:3000/tasks", {
+                method: 'POST',
+                body: JSON.stringify(task),
+                headers: {
+                    'Content-Type':'application/json',
+                }
+                }).then(window.location.href = "/");
+            } else {
+                alert("Fields must not be empty");
+            };
+        }
+    )};
 
     return(
         <div id="NewTaskForm">
@@ -44,7 +46,7 @@ function NewTaskForm() {
                 <form class="popUpFormContent">
                     <div class="formHeader">
                         <h1>Create New Task:</h1>    
-                        <img class="exitCross" src="cross.png" onClick={() => close()}></img>
+                        <img class="exitCross" src="cross.png" onClick={() => close()} alt="exitCross"></img>
                     </div>
                     <div class="headerBreakLine"></div>
                     <div class="form">
@@ -58,7 +60,7 @@ function NewTaskForm() {
                             <textarea id="DescriptionForm" class="textField" placeholder="Description..." required></textarea>
                         </div>
 
-                        <button class="submit" onClick={(e) => createNewTask(e)}>Create Task</button>
+                        <button type="submit" class="submit" onClick={(e) => createNewTask(e)}>Create Task</button>
                     </div>
                 </form>
             </div>

@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import React from 'react';
+
 import './App.css';
 
 import './Components/Header/Header.css';
@@ -23,19 +24,18 @@ import './Components/Tasks/EditPopUp/EditPopUp.css';
 import EditPopUp from './Components/Tasks/EditPopUp/EditPopUp';
 
 function App() {
-  
   return (
-      <div className="App">
-        <Header />
-        <LoginForm />
-        <SignUpForm />
-        <div id="WorkSpace">
-          <Task />
-          <SideBar />
-          <NewTaskForm />
-          <EditPopUp />
-        </div>
+    <div className="App">
+      <Header />
+      <LoginForm />
+      <SignUpForm />
+      <div id="WorkSpace">
+        <Task />
+        <SideBar />
+        <NewTaskForm />
+        <EditPopUp />
       </div>
+    </div>
   );
 }
 

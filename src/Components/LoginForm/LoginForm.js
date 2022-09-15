@@ -11,21 +11,21 @@ function LoginForm() {
         document.querySelector("#LoginForm").style.display = "none";
     }
 
-    function login() {
+    function login(e) {
 
-            fetch("http://localhost:3000/login", {
-                method: 'POST',
-                body: JSON.stringify(
-                    {
-                        email: document.querySelector("#EMailForm").value,
-                        password: document.querySelector("#PasswordForm").value
-                        
-                    }),
-                headers: {
-                    'Content-Type':'application/json'
-                }
-            })
-        }
+        
+        fetch("http://localhost:3000/login", {
+            method: 'POST',
+            body: JSON.stringify(
+                {
+                    email: document.querySelector("#LoginMail").value,
+                    password: document.querySelector("#LoginPassword").value
+                }),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }).then(window.location.href = "/");
+    }
 
 
     return(
@@ -34,21 +34,21 @@ function LoginForm() {
                 <form class="popUpFormContent">
                     <div class="formHeader">
                         <h1>Login:</h1>    
-                        <img class="exitCross" src="cross.png" onClick={() => close()}></img>
+                        <img class="exitCross" src="cross.png" onClick={() => close()} alt="exitCross"></img>
                     </div>
                     <div class="headerBreakLine"></div>
                     <div class="form">
                         <div class="formField">
                             <label class="formLabel"> E-Mail: </label>
-                            <input type={"email"} class="textField" placeholder="E-Mail..." required></input>
+                            <input id="LoginMail" type={"email"} class="textField" placeholder="E-Mail..." required></input>
                         </div>
                         
                         <div class="formField">
                             <label class="formLabel"> Password: </label> 
-                            <input type={"password"} class="textField" placeholder="Password..." required></input>
+                            <input id="LoginPassword" type={"password"} class="textField" placeholder="Password..." required></input>
                         </div>
 
-                        <button type="submit" class="submit" onClick={() => login()}>Login</button>
+                        <button type="submit" class="submit" onClick={(e) => login(e)}>Login</button>
                     </div>
                 </form>
             </div>

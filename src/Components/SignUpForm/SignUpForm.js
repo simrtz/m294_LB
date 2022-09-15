@@ -11,13 +11,14 @@ function SignUpForm() {
         document.querySelector("#SignUpForm").style.display = "none";
     }
 
-    function signUp() {
+    function signUp(e) {
 
         let password = document.querySelector("#PasswordForm").value;
         let confirmPassword = document.querySelector("#ConfirmPasswordForm").value
 
         if(password === confirmPassword) {
 
+            e.preventDefault();
             fetch("http://localhost:3000/signup", {
                 method: 'POST',
                 body: JSON.stringify(
@@ -29,7 +30,11 @@ function SignUpForm() {
                 headers: {
                     'Content-Type':'application/json'
                 }
-            })
+            }).then((response) => response.JSON())
+            .then((data) => {
+                localStorage.setItem("token", data.accessToken);
+            }
+            ).then(window.location.href = "/");
         }
     }
 
@@ -39,9 +44,9 @@ function SignUpForm() {
                 <form class="popUpFormContent">
                     <div class="formHeader">
                         <h1>Sign Up:</h1>      
-                        <img class="exitCross" src="cross.png" onClick={() => close()}></img>
+                        <img class="exitCross" src="cross.png" onClick={() => close()} alt="exitCross"></img>
                     </div>
-                    <div class="headerBreakLine"></div>
+                    <div class="headerBreakLine"></div> 
                     <div class="form">
 
                         <div class="formField">
@@ -64,7 +69,7 @@ function SignUpForm() {
                             <input id="ConfirmPasswordForm" type={"password"} class="textField" placeholder="Confirm Password..." required></input>
                         </div>
 
-                        <button type="submit" class="submit" onClick={() => signUp()}>Sign Up</button>
+                        <button type="submit" class="submit" onClick={(e) => signUp(e)}>Sign Up</button>
                     </div>
                 </form>
             </div>

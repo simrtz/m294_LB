@@ -17,7 +17,7 @@ function EditPopUp() {
                     <form class="popUpFormContent">
                         <div class="formHeader">
                             <h1>Edit Task:</h1>    
-                            <img class="exitCross" src="cross.png" onClick={() => close()}></img>
+                            <img class="exitCross" src="cross.png" onClick={() => close()} alt="exitCross"></img>
                         </div>
                         <div class="headerBreakLine"></div>
                         <div class="form">
