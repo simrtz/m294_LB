@@ -11,6 +11,14 @@ function Header() {
         document.querySelector("#SignUpForm").style.display = "flex";
     }
 
+  
+    setTimeout(() => {
+        if(sessionStorage.getItem("token")) {
+            document.querySelector("#LoginButton").style.display = "none";
+            document.querySelector("#SignUpButton").style.display = "none"; 
+        }
+    })
+
     return (
         <div id="Header">
             <img id="Logo" src='ToDoList.png' alt='Logo'></img>

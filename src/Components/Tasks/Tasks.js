@@ -14,20 +14,19 @@ function Tasks() {
         </div>`
     }
 
-        window.onload = async function getData() {
-            const response = await fetch ("http://localhost:3000/tasks", {
-            method: 'GET',
-            header: {
-                "Authorization": `bearer ${sessionStorage.getItem("token")}`
-            }
-        }); 
+    window.onload = async function getData() {
+        const response = await fetch ("http://localhost:3000/tasks", {
+        method: 'GET'
+        //headers: {
+            //'Authorization': `Bearer ${sessionStorage.getItem("token")}`,
+            //Commented out because it doesn't work and would destroy the Application
+        //}
+    }); 
 
-        const tasks = await response.json();
+        let tasks = await response.json();
 
-        window.onload = function() {
-            document.querySelector("#Tasks").innerHTML = `${tasks.map(taskTemplate).join('')}`;
-        }
-
+        document.querySelector("#Tasks").innerHTML = `${tasks.map(taskTemplate).join('')}`;
+    
         document.querySelectorAll(".deleteButton").forEach((task) => {
             task.addEventListener("click", function() {
                 fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
@@ -59,8 +58,9 @@ function Tasks() {
                     headers: {
                         "Content-Type":"application/json"
                     }
-                    }).then(() => window.location.reload());;
-                })
+                    }).then(() => window.location.reload());
+                        alert("Task was edited")
+                    })
             })
         }
         ) 
