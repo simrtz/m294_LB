@@ -14,8 +14,9 @@ function NewTaskForm() {
         document.querySelector("#NewTaskForm").style.display = "none";
     }
 
-    function createNewTask() {
+    function createNewTask(e) {
 
+        e.preventDefault();
         fetch("http://localhost:3000/tasks")
         .then((response) => response.json())
         .then((data) => {
@@ -32,7 +33,7 @@ function NewTaskForm() {
             headers: {
                 'Content-Type':'application/json',
             }
-            }).then(window.location.href("/"));
+            }).then(window.location.href = "/");
     ;
         })
     }
@@ -57,7 +58,7 @@ function NewTaskForm() {
                             <textarea id="DescriptionForm" class="textField" placeholder="Description..." required></textarea>
                         </div>
 
-                        <button class="submit" onClick={() => createNewTask()}>Create Task</button>
+                        <button class="submit" onClick={(e) => createNewTask(e)}>Create Task</button>
                     </div>
                 </form>
             </div>
