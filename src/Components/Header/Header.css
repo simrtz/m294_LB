@@ -47,3 +47,9 @@
 #SignUpButton:hover{
     color: rgb(202, 168, 206);
 }
+
+#LogoutButton{
+    display: none;
+    margin-left: 20px;
+    margin-right: 140px;
+}

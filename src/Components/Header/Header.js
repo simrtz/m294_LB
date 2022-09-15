@@ -11,14 +11,20 @@ function Header() {
         document.querySelector("#SignUpForm").style.display = "flex";
     }
 
+    function logout() {
+        sessionStorage.clear();
+        window.location.href = "/";
+    }
+
   
     setTimeout(() => {
         if(sessionStorage.getItem("token")) {
             document.querySelector("#LoginButton").textContent = "switch Account";
-            document.querySelector("#LoginButton").style.marginRight = "270px";
             document.querySelector("#SignUpButton").style.display = "none"; 
+
+            document.querySelector("#LogoutButton").style.display = "flex";
         }
-    })
+    });
 
     return (
         <div id="Header">
@@ -26,6 +32,7 @@ function Header() {
             <h1>To-Do List</h1>
             <div id="LoginButton" class="accountButton" onClick={() => login()}>Login</div>
             <div id="SignUpButton" class="accountButton" onClick={() => signUp()}>Sign up</div>
+            <div id="LogoutButton" class="accountButton" onClick={() => logout()}>Logout</div>
         </div>
     );
 }
