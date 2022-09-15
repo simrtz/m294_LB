@@ -1,8 +1,12 @@
 function SideBar () {
 
     function createTask() {
-        
-        document.querySelector("#NewTaskForm").style.display = "flex";
+
+        if(sessionStorage.getItem("token")) {
+            document.querySelector("#NewTaskForm").style.display = "flex";
+        } else {
+            alert("Log In or Sign Up to create Tasks");
+        }
     }
 
     return(

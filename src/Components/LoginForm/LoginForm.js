@@ -26,7 +26,6 @@ function LoginForm() {
             }
         }).then((response) => response.json())
         .then((data) => {
-            console.log(data);
             sessionStorage.setItem("token", data.accessToken);
             window.location.href = "/"
         })

@@ -13,11 +13,6 @@ function SignUpForm() {
 
     function signUp(e) {
 
-        let password = document.querySelector("#PasswordForm").value;
-        let confirmPassword = document.querySelector("#ConfirmPasswordForm").value
-
-        if(password === confirmPassword) {
-
             e.preventDefault();
             fetch("http://localhost:3000/signup", {
                 method: 'POST',
@@ -25,19 +20,22 @@ function SignUpForm() {
                     {
                         username: document.querySelector("#UsernameForm").value,
                         email: document.querySelector("#EMailForm").value,
-                        password: password
+                        password: document.querySelector("#PasswordForm").value
                     }),
                 headers: {
                     'Content-Type':'application/json'
                 }
-            }).then((response) => response.JSON())
+            }).then((response) => response.json())
             .then((data) => {
-                sessionStorage.setItem("token", data.accessToken);
-            }
-            ).then(window.location.href = "/");
-        }
+                if(data.accessToken) {
+                    sessionStorage.setItem("token", data.accessToken);
+                    window.location.href = "/"
+                } else {
+                    alert(data);
+                }
+            });
     }
-
+    
     return(
         <div id="SignUpForm">
             <div class="popUpFormBG">
@@ -62,11 +60,6 @@ function SignUpForm() {
                         <div class="formField">
                             <label class="formLabel"> Password: </label> 
                             <input id="PasswordForm" type={"password"} class="textField" placeholder="Password..." required></input>
-                        </div>
-
-                        <div class="formField">
-                            <label class="formLabel"> Confirm Password: </label> 
-                            <input id="ConfirmPasswordForm" type={"password"} class="textField" placeholder="Confirm Password..." required></input>
                         </div>
 
                         <button type="submit" class="submit">Sign Up</button>

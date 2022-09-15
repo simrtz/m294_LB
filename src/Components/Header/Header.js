@@ -14,7 +14,8 @@ function Header() {
   
     setTimeout(() => {
         if(sessionStorage.getItem("token")) {
-            document.querySelector("#LoginButton").style.display = "none";
+            document.querySelector("#LoginButton").textContent = "switch Account";
+            document.querySelector("#LoginButton").style.marginRight = "270px";
             document.querySelector("#SignUpButton").style.display = "none"; 
         }
     })

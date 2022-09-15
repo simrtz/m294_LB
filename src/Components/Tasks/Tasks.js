@@ -1,3 +1,12 @@
+function parseJwt (token) {
+    var base64Url = token.split('.')[1];
+    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(jsonPayload);
+};
 
 function Tasks() {
 
@@ -16,14 +25,13 @@ function Tasks() {
 
     window.onload = async function getData() {
         const response = await fetch ("http://localhost:3000/tasks", {
-        method: 'GET'
-        //headers: {
-            //'Authorization': `Bearer ${sessionStorage.getItem("token")}`,
-            //Commented out because it doesn't work and would destroy the Application
-        //}
+        method: 'GET',
     }); 
 
         let tasks = await response.json();
+
+        tasks = tasks.filter((task) => task.userId === parseInt(parseJwt(sessionStorage.getItem("token")).sub));
+
 
         document.querySelector("#Tasks").innerHTML = `${tasks.map(taskTemplate).join('')}`;
     
@@ -49,7 +57,8 @@ function Tasks() {
                     let editTask = {
                         id : task.getAttribute("taskID"),
                         title : document.querySelector("#EditTitle").value, 
-                        description: document.querySelector("#EditDescription").value
+                        description: document.querySelector("#EditDescription").value,
+                        userId : parseInt(parseJwt(sessionStorage.getItem("token")).sub)
                     } 
             
                     fetch("http://localhost:3000/tasks/" + task.getAttribute("taskID") , {
