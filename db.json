@@ -1,59 +1,6 @@
 {
   "users": [
-    {
-      "email": "test@test.ch",
-      "password": "$2a$10$AOn2kOiZ8eIl12/XHfV6NuzBtkrkGulOKoEwScdfwvS2TRHWfFbBO",
-      "username": "test",
-      "id": 1
-    },
-    {
-      "email": "ds@ds.e",
-      "password": "$2a$10$TIaKoOCp.V.rmFZuQvxys.7uulBuuUFB9WqaQidYJXwWVcpFwEyVG",
-      "username": "test",
-      "id": 2
-    },
-    {
-      "email": "hallo@hallo.ch",
-      "password": "$2a$10$M7W.GQbpQ.OX0adgYP.TZ.21JEMi7A/OiaSG1VhHWWJa4DqVSKK8i",
-      "username": "test",
-      "id": 3
-    },
-    {
-      "email": "test@tes2t.ch",
-      "password": "$2a$10$0sO8E7hNvynHY6TjQkVnJukt6.kyFrVcGgbcrP8QTMhu6csT.NjYC",
-      "username": "aughh",
-      "id": 4
-    },
-    {
-      "email": "fdsf@fdf",
-      "password": "$2a$10$bqwlDMD7/zgycSwByJO09.K7vbQ.fFRTWWMTXJMIjDIkD3deKOzLe",
-      "username": "fsd",
-      "id": 5
-    },
-    {
-      "email": "test@test2.ch",
-      "password": "$2a$10$nJJb.VrvoII/LaNpeAmySexQITaqe36UlP4VxRbzELdJjBxspCA8K",
-      "username": "test",
-      "id": 6
-    },
-    {
-      "email": "test@tes4t.ch",
-      "password": "$2a$10$pEM2aauRSMbCLMu5S.O.TOjQle6VsZF3xoMx5zbog/nGbEALXjtfe",
-      "username": "test",
-      "id": 7
-    },
-    {
-      "email": "simon@simon.ch",
-      "password": "$2a$10$8/pegtcyVexOxTCMeGc2neIK06UTnY20sGRtTRaMlQg.QHWsyaz4i",
-      "username": "simon",
-      "id": 8
-    }
   ],
   "tasks": [
-    {
-      "id": 1,
-      "title": "Test",
-      "description": "test test test"
-    }
   ]
 }
